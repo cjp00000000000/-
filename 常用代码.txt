@@ -1,0 +1,67 @@
+//定时器
+var timer = setInterval(function(){
+
+},1000);
+clearInterval(timer);
+
+//延时器
+var timer = setTimerout(function(){
+
+},1000);
+clearTimeout(timer);
+
+
+
+
+事件的触发---------------------------------
+onchange//输入框内容发生改变且失去焦点时触发
+onselect//选择输入框文本时触发
+onfocus//输入框获取到焦点时触发
+onblur//输入框失去焦点时触发
+
+onresize = function(){
+	console.log("页面高度"+document.documentElement.clientWidth)
+	console.log("页面宽度"+document.documentElement.clientHeight)
+}
+
+
+
+//封装获取css样式的方法
+function getStyleAttr(obj, attr){
+	if (window.getComputedStyle) {
+		return  getComputedStyle(obj, null)[attr];
+	}
+	else {
+		return obj.currentStyle[attr];
+	}
+}
+
+//添加事件监听器
+function addEvent(obj, type, fn, flag){
+	if (obj.addEventListener) {
+		obj.addEventListener(type, fn, flag);
+	}
+	else {
+		obj.attachEvent("on"+type, fn);
+	}
+}
+
+//移除事件监听器
+function removeEvent(obj, type, fn, flag){
+	if (obj.removeEventListener) {
+		obj.removeEventListener(type, fn, flag);
+	}
+	else {
+		obj.detachEvent("on"+type, fn);
+	}
+}
+
+
+				//document.createElement() : 创建一个元素节点   （重点）
+				//b.appendChild(a) : 在b的子节点末尾添加一个a节点 （重点）
+				//document.createTextNode() : 创建一个文本节点
+				//b.replaceChild(n1,n2) ： 替换节点（n1替换n2） 
+				//b.insertBefore(n1,n2) : 插入节点（n1插入n2前）
+				//b.removeChild(a): 删除节点   （重点）
+				//b.cloneNode(true): 复制节点 （重点）
+
