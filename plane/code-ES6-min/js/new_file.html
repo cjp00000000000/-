@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			//反向调用
+			fn( 1, function(b){
+				console.log()
+			})
+			
+			function fn( a , n){
+				n(2);
+				console.log(a);
+			}
+			
+			
+			
+			
+			
+			var timer = post(function(n){
+				
+				console.log(n);
+			},1000)
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
